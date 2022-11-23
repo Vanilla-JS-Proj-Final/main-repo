@@ -1,0 +1,352 @@
+/* GENERAL */
+:root {
+  --clr-bg-aside: #f2eae1;
+  --clr-default-text: #000000;
+  --clr-role-text: #feaf00;
+  --clr-hover-btn: #ffbd2d;
+  --clr-border-search-btn: #e5e5e5;
+  --clr-text-search-btn: #c4c4c4;
+  --clr-bg-main: #f8f8f8;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* COMPONENTS */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.aside-bar {
+  grid-row: 1;
+  grid-column: 1 / 2;
+  background-color: var(--clr-bg-aside);
+
+  height: 100vh;
+
+  padding: 0 3rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  grid-row: 1;
+  grid-column: 2 / -1;
+
+  height: 100vh;
+}
+
+/* USER INFO */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1.8rem; */
+
+  margin-top: 4rem;
+}
+
+.profile-picture {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+
+  margin-bottom: 1.8rem;
+}
+
+.user-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-default-text);
+}
+
+.user-role {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--clr-role-text);
+  margin-bottom: 5rem;
+}
+
+/* BUTTONS NAV */
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-default {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--clr-default-text);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 1rem;
+  flex: 1;
+
+  background-color: Transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.btn-default:hover {
+  background-color: var(--clr-hover-btn);
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 2.2rem;
+  flex-shrink: unset;
+  flex-shrink: 0;
+}
+
+.btn-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+.add-new-student-btn {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.add-new-student-btn:hover {
+  color: var(--clr-default-text);
+}
+
+.logout-section {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.blank-space {
+  content: "";
+  flex: 1000000;
+}
+
+.logout-btn {
+  margin-bottom: 2rem;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  flex-flow: column;
+}
+
+/* SEARCH SECTION */
+.search-section {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  border: 1px solid var(--clr-border-search-btn);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.search-input {
+  border: none;
+
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-icon {
+  color: var(--clr-text-search-btn);
+}
+
+/* CONTACTS SECTION */
+.contacts-section {
+  background-color: var(--clr-bg-main);
+  flex: 1;
+
+  padding: 2rem 3rem;
+}
+
+.contacts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid var(--clr-border-search-btn);
+}
+
+.contacts-header-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.btn-header-add-new {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--clr-role-text);
+  text-transform: uppercase;
+  padding: 1.4rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.btn-header-add-new:hover {
+  background-color: var(--clr-hover-btn);
+  color: #fff;
+}
+
+/* CONTACTS LIST */
+.contacts-header {
+  margin-bottom: 1rem;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+
+  grid-auto-rows: auto;
+  padding: 1.4rem 1.4rem;
+
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.contacts-list {
+  background-color: #fff;
+
+  border-radius: 5px;
+}
+
+.contact-photo {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 5px;
+}
+
+.contact-name,
+.contact-email,
+.contact-phone-list,
+.contact-actions,
+.contact-phone-item {
+  display: flex;
+  align-items: center;
+
+  margin: 0 2rem;
+}
+
+.contact-phone-list {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-actions {
+  justify-content: flex-end;
+  gap: 1.4rem;
+}
+
+.contact-phone-item {
+  gap: 0.4rem;
+}
+
+.icon-tel-number {
+  font-size: 1.4rem;
+  padding: 0.4rem;
+}
+
+.contact-btn-actions {
+  width: 50px;
+  height: 40px;
+
+  background-color: Transparent;
+  border: none;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--clr-default-text);
+}
+
+.contact-btn-actions:hover {
+  background-color: var(--clr-hover-btn);
+  border-radius: 5px;
+  color: var(--clr-default-text);
+}
+
+/* MODAL COMPONENENT */
+
+/* HEADER */
+.header-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 2rem 0;
+}
+
+.modal-contact-photo {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+}
+
+.modal-contact-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ELEMENTS */
+.modal-box {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.modal-subtitle {
+  font-weight: 700;
+}
+
+.modal-close-btn {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  background-color: var(--clr-role-text) !important;
+  border: none !important;
+  padding: 0.6rem 1.8rem !important;
+}
+
+.modal-close-btn:hover {
+  background-color: var(--clr-hover-btn) !important;
+}
