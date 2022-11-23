@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="description" content="Contacts page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <title>Contacts</title>
+
+    <script
+      type="module"
+      defer
+      src="./js/botao-teste-renderizar-contato.js"
+    ></script>
+  </head>
+  <body class="main-grid">
+    <aside class="aside-bar">
+      <section class="user-info">
+        <img
+          class="profile-picture"
+          src="./img/random-person.jpg"
+          alt="profile-picture"
+        />
+        <div class="user-name">User Name</div>
+        <div class="user-role">User</div>
+      </section>
+
+      <section class="nav-section">
+        <button class="btn-default home-btn">
+          <ion-icon class="icon" name="home-outline"></ion-icon>
+          <span class="btn-text home-btn-text">Home</span>
+        </button>
+        <a href="#" class="btn-default add-new-student-btn">
+          <ion-icon class="icon" name="add-outline"></ion-icon>
+          <span class="btn-text add-new-student-btn-text">Add Contact</span>
+        </a>
+      </section>
+
+      <section class="logout-section">
+        <div class="blank-space"></div>
+        <button class="btn-default logout-btn">
+          <span class="btn-text logout-btn-text">Logout</span>
+          <ion-icon class="icon" name="log-out-outline"></ion-icon>
+        </button>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="search-section">
+        <div class="search-bar">
+          <form class="search-form" for="search-text">
+            <input
+              class="search-input"
+              type="text"
+              id="search-text"
+              name="search-text"
+              placeholder="Search..."
+            />
+            <ion-icon class="icon search-icon" name="search-outline"></ion-icon>
+          </form>
+        </div>
+      </section>
+
+      <section class="contacts-section">
+        <div class="contacts-header">
+          <h2 class="contacts-header-text">Contacts List</h2>
+          <a class="btn-header-add-new" href="#">Add new Contact</a>
+        </div>
+
+        <button class="botao-teste-renderizar-contato btn btn-primary">
+          Botão para mostrar como renderizar contato
+        </button>
+
+        <!-- A PARTIR DAQUI QUE VAI SER GERADO VIA JS COM O GET ALL! -->
+        <!-- <div class="contacts-list contacts-grid" id="1515131351531351531">
+          <img
+            class="contact-photo"
+            src="./img/random-person.jpg"
+            alt="contact-photo"
+          />
+
+          <div class="contact-name">Contact Name</div>
+
+          <div class="contact-email">randomperson@gmail.com</div>
+
+          <ul class="contact-phone-list">
+            <li class="contact-phone-item">
+              <ion-icon
+                class="icon-tel-number"
+                name="phone-portrait-outline"
+              ></ion-icon>
+              <span class="contact-phone-cell-number">+55 11 91615000</span>
+            </li>
+
+            <li class="contact-phone-item">
+              <ion-icon class="icon-tel-number" name="home-outline"></ion-icon>
+              <span class="contact-phone-home-number">+55 11 51250120</span>
+            </li>
+
+            <li class="contact-phone-item">
+              <ion-icon class="icon-tel-number" name="bag-outline"></ion-icon>
+              <span class="contact-phone-work-number">+55 11 51250120</span>
+            </li>
+          </ul>
+
+          <div class="contact-actions">
+            <button
+              class="contact-btn-actions contact-more-info-btn"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#windowModal"
+            >
+              <ion-icon class="icon" name="add-outline"></ion-icon>
+            </button>
+            <a href="#" class="contact-btn-actions contact-edit-btn">
+              <ion-icon class="icon" name="pencil-outline"></ion-icon>
+            </a>
+            <button class="contact-btn-actions contact-edit-btn">
+              <ion-icon class="icon" name="trash-outline"></ion-icon>
+            </button>
+          </div>
+        </div> -->
+        <!-- AQUI ACABA O COMPONENTE DE CONTATO! -->
+      </section>
+
+      <!-- ATUALIZAR VIA JS COM O GET BY ID!!! -->
+      <div
+        class="modal fade"
+        id="windowModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Contact</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="header-modal-body">
+                <img
+                  class="modal-contact-photo"
+                  src="./img/random-person.jpg"
+                  alt="contact-photo"
+                />
+                <span class="modal-contact-name">Contact Name</span>
+              </div>
+
+              <div class="modal-box modal-name-box">
+                <span class="modal-subtitle modal-nickname-subtitle"
+                  >Nickname:
+                </span>
+                <span class="modal-text modal-nickname-text">Nome Apelido</span>
+              </div>
+
+              <div class="modal-box modal-email-box">
+                <span class="modal-subtitle modal-email-subtitle">Email: </span>
+                <span class="modal-text modal-email-text"
+                  >emailteste@gmail.com</span
+                >
+              </div>
+
+              <div class="modal-box modal-address-box">
+                <span class="modal-subtitle modal-address-subtitle"
+                  >Address:
+                </span>
+                <span class="modal-text modal-address-text">
+                  Rua coloquearuaaqui, 1515 - São Paulo - SP - CEP: 151151-021,
+                  Brasil</span
+                >
+              </div>
+
+              <div class="modal-box modal-phone-box">
+                <span class="modal-subtitle modal-phone-subtitle"
+                  >Phone numbers:
+                </span>
+                <ul class="modal-phone-list">
+                  <li class="modal-phone-item">
+                    <span class="modal-subtitle modal-phone-subtitle"
+                      >Cell:
+                    </span>
+                    <span class="modal-text modal-phone-cell-text"
+                      >+55 11 12515050</span
+                    >
+                  </li>
+                  <li class="modal-phone-item">
+                    <span class="modal-subtitle modal-phone-subtitle"
+                      >Home:
+                    </span>
+                    <span class="modal-text modal-phone-home-text"
+                      >+55 11 12515050</span
+                    >
+                  </li>
+                  <li class="modal-phone-item">
+                    <span class="modal-subtitle modal-phone-subtitle"
+                      >Work:
+                    </span>
+                    <span class="modal-text modal-phone-work-text"
+                      >+55 11 12515050</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="modal-box modal-notes-box">
+                <span class="modal-subtitle modal-notes-subtitle">Notes: </span>
+                <br />
+                <span class="modal-text modal-notes-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque reiciendis unde distinctio necessitatibus, ipsum
+                  cupiditate excepturi ut illo ullam in at explicabo. Odit
+                  repellat, expedita aperiam sint harum dolorum magni?</span
+                >
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary modal-close-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
