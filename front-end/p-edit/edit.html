@@ -20,7 +20,11 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
     <title>Edit Contact</title>
-
+    <script
+    type="module"
+    defer
+    src="./js/script.js"
+  ></script>
 </head>
 
 <body class="main-grid">
@@ -60,8 +64,13 @@
             </div>
             <!--INICIO FORM -->
             <div class="form-style">
-                <form class="form-section col-md-8">
+                <form class="form-section col-md-8" method="submit">
                     <h3 class="mb-5">Contact Info</h3>
+                    <div class="mb-4">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <label for="contact-photo" class="form-label px-3">Contact photo</label>
+                        <input type="file" class="form-control form-control-lg" id="contact-photo">
+                    </div>
                     <div class="mb-4">
                         <ion-icon name="person-outline"></ion-icon>
                         <label for="contact-name" class="form-label px-3">Contact name</label>
@@ -90,13 +99,13 @@
                         </div>
                         <div class="mb-4 col-md-6">
                             <ion-icon name="call-outline"></ion-icon>
-                            <label for=" contact-homephonenumber" class="form-label px-3">Home number</label>
+                            <label for="contact-homephonenumber" class="form-label px-3">Home number</label>
                             <input type="tel" class="form-control form-control-lg" id="contact-homephonenumber"
                                 placeholder="Country name">
                         </div>
                         <div class="mb-4 col-md-6">
                             <ion-icon name="business-outline"></ion-icon>
-                            <label for=" contact-workphonenumber" class="form-label px-3">Work number</label>
+                            <label for="contact-workphonenumber" class="form-label px-3">Work number</label>
                             <input type="tel" class="form-control form-control-lg" id="contact-workphonenumber"
                                 placeholder="Country name">
                         </div>
@@ -110,12 +119,12 @@
                                 placeholder="Street, number, complements">
                         </div>
                         <div class="mb-4 col-md-6">
-                            <label for=" contact-city" class="form-label px-3">City</label>
+                            <label for="contact-city" class="form-label px-3">City</label>
                             <input type="text" class="form-control form-control-lg" id="contact-city"
                                 placeholder="City name">
                         </div>
                         <div class="mb-4 col-md-6">
-                            <label for=" contact-state" class="form-label px-3">State</label>
+                            <label for="contact-state" class="form-label px-3">State</label>
                             <input type="text" class="form-control form-control-lg" id="contact-state"
                                 placeholder="State name">
                         </div>
@@ -135,7 +144,7 @@
                         <label for=" contact-note" class="form-label px-3">Notes</label>
                         <textarea class="form-control" id="contact-note" rows="4"></textarea>
                     </div>
-                    <a class="btn-header-add-new mt-4 col-md-4" href="#">Add new Contact</a>
+                    <a class="btn-header-add-new mt-4 col-md-4 buttonSend" href="#">Add new Contact</a>
                 </form>
             </div>
         </section>
