@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Book</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+    <script type="module" src="./js/script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;600&family=Roboto&family=Secular+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="login" class="login col-3">
+        <h1 class="text-center"><span class="line"></span>CONTACT BOOK</h1>
+        <h2 id="sign-in" class="text-center">SIGN IN</h2>
+        <h3 id="credentials" class="text-center">Enter your credentials to access your account</h3>
+
+        <form id="form" novalidate>
+            <div id="email-form" class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email" placeholder="Enter your e-mail">
+                <div id="email-warn" class="form-warn"></div>
+            </div>
+
+            <div id="password-form" class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" id="password" type="password" placeholder="Enter your password">
+                <div id="password-warn" class="form-warn"></div>
+            </div>
+            <div id="error-message" class="error-message">
+
+            </div>
+            <button id="sign-in-button" class="btn w-100" type="submit">SIGN IN</button>
+        </form>
+        <div id="links-area">
+            <p class="forgot-password text-center">Are you new here? <span id="register-password" class="reset-password">Register Now</span></p>
+            <p class="forgot-password text-center">Forgot your password? <span class="reset-password">Reset Password</span></p>
+        </div>
+    </div>
+</body>
+</html>

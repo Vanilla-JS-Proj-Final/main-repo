@@ -1,0 +1,116 @@
+:root {
+    --bg-color: linear-gradient(71.17deg, #FEAF00 19.35%, #F8D442 90.12%);
+    --box-color: #FFFFFF;
+    --font-color: #6C6C6C;
+    --bar-color: #F8D442;
+    --btn-color: #FEAF00;
+    --ipt-border-color: #E5E5E5;
+    --ipt-placeholder-color: #CDCDCD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+} 
+
+.login {
+    width: 360px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--box-color);
+    font-family: 'Montserrat';
+}
+
+.login h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    margin: 30px 0 40px 0;
+}
+
+.login h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.login h3 {
+    font-size: 16px;
+    color: var(--font-color);
+    margin-bottom: 60px;
+}
+
+.login .line {
+    border-left: 7px solid var(--bar-color);
+    margin-right: 10px;
+}
+
+.login form {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--font-color);
+}
+
+.login form .form-group {
+    margin-bottom: 12px;
+}
+
+.login form input {
+    font-size: 12px;
+    padding: 1em;
+    border: 1px solid var(--ipt-border-color);
+}
+
+.login form input::placeholder{
+    color: var(--ipt-placeholder-color);
+}
+
+.login button {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.login button {
+    background-color: var(--btn-color);
+    color: #FFFFFF;
+    transition: 0.2;
+    margin-bottom: 50px;
+}
+
+.login button:hover{
+    background-color: var(--btn-color);
+}
+
+.login .error-message {
+    color: red;
+}
+
+.login .form-warn {
+    font-size: 12px;
+    color: red;
+}
+
+.login .forgot-password {
+    color: var(--font-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.login .reset-password {
+    color: var(--btn-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login form .alertRed {
+    border: 2px solid red;
+}
