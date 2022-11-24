@@ -1,0 +1,21 @@
+.form-section {
+    background-color: var(--clr-bg-main);
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-style{
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+  }
+
+  .form-control:focus {
+    border-color: var(--clr-hover-btn) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 189, 45, 0.25) !important;
+}
+
+.form-control-lg{
+    height: 40px;
+}
