@@ -31,7 +31,7 @@ html {
   grid-column: 1 / 2;
   background-color: var(--clr-bg-aside);
 
-  height: 100vh;
+  min-height: 100vh;
 
   padding: 0 3rem;
 
@@ -43,7 +43,7 @@ html {
   grid-row: 1;
   grid-column: 2 / -1;
 
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* USER INFO */
@@ -118,25 +118,27 @@ html {
   align-items: flex-start;
 }
 
-.add-new-student-btn {
+.add-new-student-btn,
+.home-btn {
   text-decoration: none;
   font-weight: 500;
 }
 
-.add-new-student-btn:hover {
+.add-new-student-btn:hover,
+.home-btn:hover {
   color: var(--clr-default-text);
 }
 
 .logout-section {
   display: flex;
   flex-direction: column;
-
-  flex: 1;
+  margin-top: 4rem;
+  /* flex: 1; */
 }
 
 .blank-space {
   content: "";
-  flex: 1000000;
+  /* flex: 1000000; */
 }
 
 .logout-btn {
