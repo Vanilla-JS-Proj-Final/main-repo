@@ -20,11 +20,9 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
     <title>Edit Contact</title>
-    <script
-    type="module"
-    defer
-    src="./js/script.js"
-  ></script>
+
+    <script type="module" defer src="./js/renderContactToEdit.js"></script>
+    <script type="module" defer src="./js/editContactDb.js"></script>
 </head>
 
 <body class="main-grid">
@@ -36,10 +34,10 @@
         </section>
 
         <section class="nav-section">
-            <button class="btn-default home-btn">
+            <a href="../contacts/contacts.html" class="btn-default home-btn">
                 <ion-icon class="icon" name="home-outline"></ion-icon>
                 <span class="btn-text home-btn-text">Home</span>
-            </button>
+            </a>
             <a href="#" class="btn-default add-new-student-btn">
                 <ion-icon class="icon" name="add-outline"></ion-icon>
                 <span class="btn-text add-new-student-btn-text">Add Contact</span>
@@ -95,19 +93,19 @@
                             <ion-icon name="phone-portrait-outline"></ion-icon>
                             <label for=" contact-cellphonenumber" class="form-label px-3">Cellphone number</label>
                             <input type="tel" class="form-control form-control-lg" id="contact-cellphonenumber"
-                                placeholder="Country name">
+                                placeholder="+55 11 915125152">
                         </div>
                         <div class="mb-4 col-md-6">
                             <ion-icon name="call-outline"></ion-icon>
                             <label for="contact-homephonenumber" class="form-label px-3">Home number</label>
                             <input type="tel" class="form-control form-control-lg" id="contact-homephonenumber"
-                                placeholder="Country name">
+                                placeholder="+55 11 55125152">
                         </div>
                         <div class="mb-4 col-md-6">
                             <ion-icon name="business-outline"></ion-icon>
                             <label for="contact-workphonenumber" class="form-label px-3">Work number</label>
                             <input type="tel" class="form-control form-control-lg" id="contact-workphonenumber"
-                                placeholder="Country name">
+                                placeholder="+55 11 55125152">
                         </div>
                     </div>
                     <div class="row col-md-12">
@@ -144,7 +142,7 @@
                         <label for=" contact-note" class="form-label px-3">Notes</label>
                         <textarea class="form-control" id="contact-note" rows="4"></textarea>
                     </div>
-                    <a class="btn-header-add-new mt-4 col-md-4 buttonSend" href="#">Add new Contact</a>
+                    <a class="btn-header-add-new mt-4 col-md-4 buttonSend" href="#" id="edit-contact-btn">Edit Contact</a>
                 </form>
             </div>
         </section>
