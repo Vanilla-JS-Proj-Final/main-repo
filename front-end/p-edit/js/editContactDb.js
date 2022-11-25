@@ -75,6 +75,5 @@ btnEdit.addEventListener("click", async (e) => {
   e.preventDefault();
   await updateContact();
 
-  // window.location.href =
-  //   "http://127.0.0.1:5501/front-end/contacts/contacts.html";
+  window.location.href = "http://localhost:1234/contacts/contacts.html";
 });
