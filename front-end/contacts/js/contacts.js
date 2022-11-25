@@ -19,7 +19,9 @@ addEventListener("load", async () => {
     const data = await response.json();
 
     if (data.erro !== "true") {
-      addContactsToHtmlPage(data.data);
+      addContactsToHtmlPage(
+        data.data.sort((a, b) => b.nome.localeCompare(a.nome))
+      );
     } else {
       alert("Error trying to get contacts data!");
     }
@@ -34,9 +36,17 @@ function addContactsToHtmlPage(data) {
     const id = contact.id;
     const name = contact.nome;
     const email = contact.email;
-    const cellphone = "+55 11 1515135153";
-    const homePhone = "+55 11 1515135153";
-    const workPhone = "+55 11 1515135153";
+
+    let cellphone = "";
+    let homePhone = "";
+    let workPhone = "";
+
+    contact.telefones.forEach((tel) => {
+      if (tel.tipo == "celular") cellphone = tel.numero;
+      if (tel.tipo == "casa") homePhone = tel.numero;
+      if (tel.tipo == "trabalho") workPhone = tel.numero;
+    });
+
     const htmlString = `
         <div class="contacts-list contacts-grid" id=${id}>
             <img
@@ -87,6 +97,28 @@ function addContactsToHtmlPage(data) {
         </div>`;
 
     contactHeaderElement.insertAdjacentHTML("afterend", htmlString);
+
+    if (cellphone == "")
+      document
+        .querySelector(".contact-phone-cell-number")
+        .closest("li")
+        .classList.add("hidden");
+
+    if (homePhone == "")
+      document
+        .querySelector(".contact-phone-home-number")
+        .closest("li")
+        .classList.add("hidden");
+
+    if (workPhone == "")
+      document
+        .querySelector(".contact-phone-work-number")
+        .closest("li")
+        .classList.add("hidden");
+
+    cellphone = "";
+    homePhone = "";
+    workPhone = "";
   });
 }
 
@@ -167,13 +199,41 @@ async function getContactById(id) {
 }
 
 function updateContactModalWindow(contact) {
-  document.querySelector(".modal-contact-name").textContent = contact.nome;
-  document.querySelector(".modal-nickname-text").textContent.apelido;
-  document.querySelector(".modal-email-text").textContent = contact.email;
-  document.querySelector(".modal-address-text").textContent =
-    contact.endereco.logradouro;
-  //    document.querySelector(".modal-phone-cell-text").textContent = contact;
-  //    document.querySelector(".modal-phone-home-text").textContent = contact;
-  //    document.querySelector(".modal-phone-work-text").textContent = contact;
-  document.querySelector(".modal-notes-text").textContent = contact.notas;
+  const modalContactNameEl = document.querySelector(".modal-contact-name");
+  const modalNicknameTextEl = document.querySelector(".modal-nickname-text");
+  const modalEmailTextEl = document.querySelector(".modal-email-text");
+  const modalAddressTextEl = document.querySelector(".modal-address-text");
+  const modalPhoneCellTextEl = document.querySelector(".modal-phone-cell-text");
+  const modalPhoneHomeTextEl = document.querySelector(".modal-phone-home-text");
+  const modalPhoneWorkTextEl = document.querySelector(".modal-phone-work-text");
+  const modalNotesTextEl = document.querySelector(".modal-notes-text");
+
+  const modalContactName = contact.nome;
+  const modalNicknameName = contact.apelido;
+  const modalEmailName = contact.email;
+  let modalAddressName =
+    contact.endereco.logradouro == ""
+      ? ""
+      : `${contact.endereco.logradouro} - ${contact.endereco.cidade}, ${contact.endereco.estado} - CEP: ${contact.endereco.cep}, ${contact.endereco.pais}`;
+
+  let modalPhoneCell = "";
+  let modalPhoneHome = "";
+  let modalPhoneWork = "";
+
+  contact.telefones.forEach((tel) => {
+    if (tel.tipo == "celular") modalPhoneCell = tel.numero;
+    if (tel.tipo == "casa") modalPhoneHome = tel.numero;
+    if (tel.tipo == "trabalho") modalPhoneWork = tel.numero;
+  });
+
+  const modalNotes = contact.notas;
+
+  modalContactNameEl.textContent = modalContactName;
+  modalNicknameTextEl.textContent = modalNicknameName;
+  modalEmailTextEl.textContent = modalEmailName;
+  modalAddressTextEl.textContent = modalAddressName;
+  modalPhoneCellTextEl.textContent = modalPhoneCell;
+  modalPhoneHomeTextEl.textContent = modalPhoneHome;
+  modalPhoneWorkTextEl.textContent = modalPhoneWork;
+  modalNotesTextEl.textContent = modalNotes;
 }
