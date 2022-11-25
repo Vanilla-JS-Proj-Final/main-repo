@@ -1,9 +1,9 @@
 async function getContactById() {
   const headers = new Headers();
-  const token = sessionStorage.getItem("@token");
+  // const token = sessionStorage.getItem("@token");
 
-  // const token =
-  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMDlhYTI1OTQtNTBhOC00NGVlLTkwNGQtNWE0YTEwZTc4Yzg5IiwiaWF0IjoxNjY5MzQzNTI3LCJleHAiOjE2NjkzNDcxMjd9.hcD4M4LsgiB59eZO4MhP0Uv0sF4wZI1qgf0vQiEmOH8";
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMDlhYTI1OTQtNTBhOC00NGVlLTkwNGQtNWE0YTEwZTc4Yzg5IiwiaWF0IjoxNjY5Mzk4OTA3LCJleHAiOjE2Njk0MDI1MDd9.H9VLugm5v_l5LSZHCV-neaCpFGNzKIBhIbJcaRxDpRY";
 
   headers.append("Authorization", token);
 

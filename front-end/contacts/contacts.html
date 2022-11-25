@@ -24,11 +24,7 @@
 
     <title>Contacts</title>
 
-    <script
-      type="module"
-      defer
-      src="./js/botao-teste-renderizar-contato.js"
-    ></script>
+    <script type="module" defer src="./js/contacts.js"></script>
   </head>
   <body class="main-grid">
     <aside class="aside-bar">
@@ -47,7 +43,7 @@
           <ion-icon class="icon" name="home-outline"></ion-icon>
           <span class="btn-text home-btn-text">Home</span>
         </button>
-        <a href="#" class="btn-default add-new-student-btn">
+        <a href="../create/create.html" class="btn-default add-new-student-btn">
           <ion-icon class="icon" name="add-outline"></ion-icon>
           <span class="btn-text add-new-student-btn-text">Add Contact</span>
         </a>
@@ -81,12 +77,10 @@
       <section class="contacts-section">
         <div class="contacts-header">
           <h2 class="contacts-header-text">Contacts List</h2>
-          <a class="btn-header-add-new" href="#">Add new Contact</a>
+          <a class="btn-header-add-new" href="../create/create.html"
+            >Add new Contact</a
+          >
         </div>
-
-        <button class="botao-teste-renderizar-contato btn btn-primary">
-          Botão para mostrar como renderizar contato
-        </button>
 
         <!-- A PARTIR DAQUI QUE VAI SER GERADO VIA JS COM O GET ALL! -->
         <!-- <div class="contacts-list contacts-grid" id="1515131351531351531">
