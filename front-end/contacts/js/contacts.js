@@ -1,13 +1,10 @@
 //const token = sessionStorage.getItem("@token");
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMDlhYTI1OTQtNTBhOC00NGVlLTkwNGQtNWE0YTEwZTc4Yzg5IiwiaWF0IjoxNjY5NDAwODkwLCJleHAiOjE2Njk0MDQ0OTB9.FQxc-VRBRQ-mG7f1KWOu9IF1pQhUKy3FRyTm-wPXgUk";
 
 addEventListener("load", async () => {
   const headers = new Headers();
-
-  //   const token = sessionStorage.getItem("@token");
-  headers.append(
-    "Authorization",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMDlhYTI1OTQtNTBhOC00NGVlLTkwNGQtNWE0YTEwZTc4Yzg5IiwiaWF0IjoxNjY5Mzk4OTA3LCJleHAiOjE2Njk0MDI1MDd9.H9VLugm5v_l5LSZHCV-neaCpFGNzKIBhIbJcaRxDpRY"
-  );
+  headers.append("Authorization", `Bearer ${token}`);
 
   const dataRequest = {
     headers: headers,
@@ -95,10 +92,7 @@ function addContactsToHtmlPage(data) {
 
 async function deleteContact(id) {
   const headers = new Headers();
-  headers.append(
-    "Authorization",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMDlhYTI1OTQtNTBhOC00NGVlLTkwNGQtNWE0YTEwZTc4Yzg5IiwiaWF0IjoxNjY5Mzk4OTA3LCJleHAiOjE2Njk0MDI1MDd9.H9VLugm5v_l5LSZHCV-neaCpFGNzKIBhIbJcaRxDpRY"
-  );
+  headers.append("Authorization", `Bearer ${token}`);
   headers.append("Content-Type", "application/json");
 
   const dataRequest = {
@@ -126,9 +120,8 @@ async function deleteContact(id) {
   }
 }
 
-addEventListener("click", (event) => {
+addEventListener("click", async (event) => {
   if (event.target.name === "trash-outline") {
-    console.log("trash");
     const contactId = event.target.parentElement.parentElement.parentElement.id;
     event.target.parentElement.parentElement.parentElement.remove();
     deleteContact(contactId);
@@ -136,5 +129,51 @@ addEventListener("click", (event) => {
     const contactId = event.target.parentElement.parentElement.parentElement.id;
     sessionStorage.setItem("IdContact", contactId);
     window.location.href = "../p-edit/edit.html";
+  } else if (event.target.name === "add-outline") {
+    const contactId = event.target.parentElement.parentElement.parentElement.id;
+    console.log(contactId);
+    const contactData = await getContactById(contactId);
+    updateContactModalWindow(contactData);
   }
 });
+
+async function getContactById(id) {
+  const headers = new Headers();
+  headers.append("Authorization", `Bearer ${token}`);
+
+  const dataRequest = {
+    headers: headers,
+    method: "GET",
+  };
+
+  try {
+    const response = await fetch(
+      `http://localhost:5000/v1/contact/${id}`,
+      dataRequest
+    );
+    const data = await response.json();
+
+    if (data.erro !== "true") {
+      console.log(data.data.nome);
+      return data.data;
+    } else {
+      alert("Error trying to get contacts data!");
+      return;
+    }
+  } catch (error) {
+    alert("Error trying to get contacts data!");
+    return;
+  }
+}
+
+function updateContactModalWindow(contact) {
+  document.querySelector(".modal-contact-name").textContent = contact.nome;
+  document.querySelector(".modal-nickname-text").textContent.apelido;
+  document.querySelector(".modal-email-text").textContent = contact.email;
+  document.querySelector(".modal-address-text").textContent =
+    contact.endereco.logradouro;
+  //    document.querySelector(".modal-phone-cell-text").textContent = contact;
+  //    document.querySelector(".modal-phone-home-text").textContent = contact;
+  //    document.querySelector(".modal-phone-work-text").textContent = contact;
+  document.querySelector(".modal-notes-text").textContent = contact.notas;
+}
