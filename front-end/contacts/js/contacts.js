@@ -51,7 +51,7 @@ function addContactsToHtmlPage(data) {
         <div class="contacts-list contacts-grid" id=${id}>
             <img
                 class="contact-photo"
-                src="./img/random-person.jpg"
+                src="http://localhost:1234/random-person.65e83ce0.jpg"
                 alt="contact-photo"
             />
 
